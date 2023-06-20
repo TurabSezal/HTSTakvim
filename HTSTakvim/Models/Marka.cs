@@ -18,7 +18,5 @@ namespace HTSTakvim.Models
         public string Adi { get; set; }
         public string Aciklama { get; set; }
         public Nullable<int> ResimID { get; set; }
-    
-        public virtual Resim Resim { get; set; }
     }
 }

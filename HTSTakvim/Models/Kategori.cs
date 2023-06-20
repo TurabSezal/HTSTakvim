@@ -17,7 +17,6 @@ namespace HTSTakvim.Models
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
         public Kategori()
         {
-            this.OzellikTip = new HashSet<OzellikTip>();
             this.Urun = new HashSet<Urun>();
         }
     
@@ -26,9 +25,6 @@ namespace HTSTakvim.Models
         public string Aciklama { get; set; }
         public Nullable<int> ResimID { get; set; }
     
-        public virtual Resim Resim { get; set; }
-        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<OzellikTip> OzellikTip { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<Urun> Urun { get; set; }
     }

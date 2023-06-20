@@ -13,10 +13,10 @@ namespace HTSTakvim.Models
     using System.Data.Entity;
     using System.Data.Entity.Infrastructure;
     
-    public partial class Entity : DbContext
+    public partial class Entities : DbContext
     {
-        public Entity()
-            : base("name=Entity")
+        public Entities()
+            : base("name=Entities")
         {
         }
     
@@ -25,30 +25,9 @@ namespace HTSTakvim.Models
             throw new UnintentionalCodeFirstException();
         }
     
-        public virtual DbSet<aspnet_Applications> aspnet_Applications { get; set; }
-        public virtual DbSet<aspnet_Membership> aspnet_Membership { get; set; }
-        public virtual DbSet<aspnet_Paths> aspnet_Paths { get; set; }
-        public virtual DbSet<aspnet_PersonalizationAllUsers> aspnet_PersonalizationAllUsers { get; set; }
-        public virtual DbSet<aspnet_PersonalizationPerUser> aspnet_PersonalizationPerUser { get; set; }
-        public virtual DbSet<aspnet_Profile> aspnet_Profile { get; set; }
-        public virtual DbSet<aspnet_Roles> aspnet_Roles { get; set; }
-        public virtual DbSet<aspnet_SchemaVersions> aspnet_SchemaVersions { get; set; }
-        public virtual DbSet<aspnet_Users> aspnet_Users { get; set; }
-        public virtual DbSet<aspnet_WebEvent_Events> aspnet_WebEvent_Events { get; set; }
-        public virtual DbSet<Giris> Giris { get; set; }
         public virtual DbSet<Kargo> Kargo { get; set; }
         public virtual DbSet<Kategori> Kategori { get; set; }
         public virtual DbSet<Marka> Marka { get; set; }
-        public virtual DbSet<Musteri> Musteri { get; set; }
-        public virtual DbSet<MusteriAdres> MusteriAdres { get; set; }
-        public virtual DbSet<OzellikDeger> OzellikDeger { get; set; }
-        public virtual DbSet<OzellikTip> OzellikTip { get; set; }
-        public virtual DbSet<Resim> Resim { get; set; }
-        public virtual DbSet<Satis> Satis { get; set; }
-        public virtual DbSet<SatisDetay> SatisDetay { get; set; }
-        public virtual DbSet<SiparisDurum> SiparisDurum { get; set; }
-        public virtual DbSet<sysdiagrams> sysdiagrams { get; set; }
         public virtual DbSet<Urun> Urun { get; set; }
-        public virtual DbSet<UrunOzellik> UrunOzellik { get; set; }
     }
 }

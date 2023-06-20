@@ -14,12 +14,6 @@ namespace HTSTakvim.Models
     
     public partial class Kargo
     {
-        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
-        public Kargo()
-        {
-            this.Satis = new HashSet<Satis>();
-        }
-    
         public int Id { get; set; }
         public string Ad { get; set; }
         public string Soyad { get; set; }
@@ -29,8 +23,5 @@ namespace HTSTakvim.Models
         public string Telefon { get; set; }
         public string Email { get; set; }
         public string Adres { get; set; }
-    
-        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<Satis> Satis { get; set; }
     }
 }

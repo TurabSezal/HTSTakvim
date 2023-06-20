@@ -14,14 +14,6 @@ namespace HTSTakvim.Models
     
     public partial class Urun
     {
-        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
-        public Urun()
-        {
-            this.Resim = new HashSet<Resim>();
-            this.SatisDetay = new HashSet<SatisDetay>();
-            this.UrunOzellik = new HashSet<UrunOzellik>();
-        }
-    
         public int Id { get; set; }
         public string Adi { get; set; }
         public string Aciklama { get; set; }
@@ -32,11 +24,5 @@ namespace HTSTakvim.Models
         public Nullable<System.DateTime> IslemZamani { get; set; }
     
         public virtual Kategori Kategori { get; set; }
-        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<Resim> Resim { get; set; }
-        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<SatisDetay> SatisDetay { get; set; }
-        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<UrunOzellik> UrunOzellik { get; set; }
     }
 }

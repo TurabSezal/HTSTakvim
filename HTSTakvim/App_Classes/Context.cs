@@ -5,14 +5,14 @@ namespace HTSTakvim.App_Classes
 {
     public class Context
     {
-        private static Entity baglanti;
+        private static Entities baglanti;
 
-        public static Entity Baglanti
+        public static Entities Baglanti
         {
             get
             {
                 if (baglanti == null)
-                    baglanti = new Entity();
+                    baglanti = new Entities();
                 return baglanti;
             }
             set { baglanti = value; }
