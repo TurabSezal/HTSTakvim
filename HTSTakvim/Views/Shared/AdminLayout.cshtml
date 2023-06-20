@@ -1,0 +1,160 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="">
+    <meta name="author" content="Mosaddek">
+    <meta name="keyword" content="FlatLab, Dashboard, Bootstrap, Admin, Template, Theme, Responsive, Fluid, Retina">
+    <link rel="shortcut icon" href="img/favicon.png">
+
+    <title>HTS</title>
+
+    <!-- Bootstrap core CSS -->
+    <link href="~/Content/template_content/css/bootstrap.min.css" rel="stylesheet">
+    <link href="~/content/template_content/css/bootstrap-reset.css" rel="stylesheet">
+    <!--external css-->
+    <link href="~/Content/template_content/assets/font-awesome/css/font-awesome.css" rel="stylesheet" />
+    <link href="~/Content/template_content/assets/jquery-easy-pie-chart/jquery.easy-pie-chart.css" rel="stylesheet" type="text/css" media="screen" />
+    <link rel="stylesheet" href="css/owl.carousel.css" type="text/css">
+    <!-- Custom styles for this template -->
+    <link href="~/Content/template_content/css/style.css" rel="stylesheet">
+    <link href="~/Content/template_content/css/style-responsive.css" rel="stylesheet" />
+
+    @RenderSection("head", false)
+    @RenderSection("Scripts", required: false)
+</head>
+
+<body>
+
+    <section id="container">
+        <!--header start-->
+        <header class="header white-bg">
+            <div class="sidebar-toggle-box">
+                <div data-original-title="Toggle Navigation" data-placement="right" class="icon-reorder tooltips"></div>
+            </div>
+            <!--logo start-->
+            <a href="Olaylar" class="logo">HTS</a>
+            <!--logo end-->
+            <div class="nav notify-row" id="top_menu">
+            </div>
+            <div class="top-nav ">
+                <!--search & user info start-->
+                <ul class="nav pull-right top-menu">
+                    <!-- user login dropdown start-->
+                    <li class="dropdown">
+                        <a data-toggle="dropdown" class="dropdown-toggle" href="#">
+                            <img alt="" src="~/Content/MarkaResim/HTS.png" style="height:35px;" width="35px;">
+                            <span class="username">@User.Identity.Name</span>
+                            <b class="caret"></b>
+                        </a>
+                        <ul class="dropdown-menu extended logout">
+                            <div class="log-arrow-up"></div>
+
+                            <li>
+                                <a href="~/Security/login">
+                                    <i class="icon-key">
+                                    </i> Çıkış Yap
+                                </a>
+                            </li>
+                        </ul>
+                    </li>
+                    <!-- user login dropdown end -->
+                </ul>
+                <!--search & user info end-->
+            </div>
+        </header>
+        <!--header end-->
+        <!--sidebar start-->
+        <aside>
+            <div id="sidebar" class="nav-collapse ">
+                <!-- sidebar menu start-->
+                <ul class="sidebar-menu" id="nav-accordion">
+                    <li>
+                        <a class="active" href="/admin/Olaylar">
+                            <i class="icon-dashboard"></i>
+                            <span>Olaylar</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a class="active" href="/admin/OlayTipi">
+                            <i class="icon-dashboard"></i>
+                            <span>Olay Tipleri</span>
+                        </a>
+                    </li>
+                    <script>
+                        function toggleSubMenu() {
+                            var subMenu = document.querySelector('.sub-menu');
+                            subMenu.classList.toggle('active');
+                        }
+                    </script>
+
+                    <!-- sidebar menu end-->
+            </div>
+        </aside>
+        <!--sidebar end-->
+        <!--main content start-->
+        <section id="main-content">
+            @RenderBody()
+        </section>
+        <!--main content end-->
+        <!--footer start-->
+        <footer class="site-footer">
+            <div class="text-center">
+                2023 &copy; Powered By HTS.
+                <a href="#" class="go-top">
+                    <i class="icon-angle-up"></i>
+                </a>
+            </div>
+        </footer>
+        <!--footer end-->
+    </section>
+    <!-- js placed at the end of the document so the pages load faster -->
+    <script src="/content/template_content/js/jquery.js"></script>
+    <script src="/content/template_content/js/jquery-1.8.3.min.js"></script>
+    <script src="/content/template_content/js/bootstrap.min.js"></script>
+    <script class="include" type="text/javascript" src="/content/template_content/js/jquery.dcjqaccordion.2.7.js"></script>
+    <script src="/content/template_content/js/jquery.scrollTo.min.js"></script>
+    <script src="/content/template_content/js/jquery.nicescroll.js" type="text/javascript"></script>
+    <script src="/content/template_content/js/jquery.sparkline.js" type="text/javascript"></script>
+    <script src="/content/template_content/assets/jquery-easy-pie-chart/jquery.easy-pie-chart.js"></script>
+    <script src="/content/template_content/js/owl.carousel.js"></script>
+    <script src="/content/template_content/js/jquery.customSelect.min.js"></script>
+    <script src="/content/template_content/js/respond.min.js"></script>
+
+    <script class="include" type="text/javascript" src="/content/template_content/js/jquery.dcjqaccordion.2.7.js"></script>
+
+    <!--common script for all pages-->
+    <script src="/content/template_content/js/common-scripts.js"></script>
+
+    <!--script for this page-->
+    <script src="/content/template_content/js/sparkline-chart.js"></script>
+    <script src="/content/template_content/js/easy-pie-chart.js"></script>
+    <script src="/content/template_content/js/count.js"></script>
+
+    <script>
+
+        //owl carousel
+
+        $(document).ready(function () {
+            $("#owl-demo").owlCarousel({
+                navigation: true,
+                slideSpeed: 300,
+                paginationSpeed: 400,
+                singleItem: true,
+                autoPlay: true
+
+            });
+        });
+
+        //custom select box
+
+        $(function () {
+            $('select.styled').customSelect();
+        });
+
+    </script>
+
+
+</body>
+</html>

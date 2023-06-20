@@ -1,0 +1,74 @@
+﻿@model HTSTakvim.Models.Urun
+
+@{
+    ViewBag.Title = "Olay Güncelle";
+    Layout = "~/Views/Shared/AdminLayout.cshtml";
+}
+
+@section head
+{
+    <!-- Custom styles for this template -->
+    <link href="/content/templates/Admintemplates/flatlab/admin/template_content/css/style.css" rel="stylesheet">
+    <link href="/content/templates/Admintemplates/flatlab/admin/template_content/css/style-responsive.css" rel="stylesheet" />
+    <link rel="stylesheet" type="text/css" href="/content/templates/Admintemplates/flatlab/admin/template_content/assets/bootstrap-datetimepicker/css/datetimepicker.css" />
+}
+
+<div class="row">
+    <h2>Ürün Güncelle</h2>
+    <div class="container">
+        <div class="col-lg-12">
+            <section class="panel">
+                <header class="panel-heading">
+                    Olay Güncelle
+                </header>
+                <div class="panel-body" style="margin-top:20px">
+                    <form role="form" action="/Admin/OlayGuncelle/@Model.Id" method="post" class="form-horizontal tasi-form">
+                        <div class="form-group has-success">
+                            <label class="col-lg-2 control-label">İşlem Zamanı</label>
+                            <div class="col-lg-10">
+                                <input type="date" class="form-control" name="IslemZamani" value="@Model.IslemZamani" />
+                            </div>
+                        </div>
+                        <div class="form-group has-success">
+                            <label class="col-lg-2 control-label">Olayın Başlangıç Zamanı</label>
+                            <div class="col-lg-10">
+                                <input type="time" class="form-control" name="Adi" value="@Model.Adi" />
+                            </div>
+                        </div>
+                        <div class="form-group has-success">
+                            <label class="col-lg-2 control-label">Olayın Tanımlanması</label>
+                            <div class="col-lg-10">
+                                <input type="time" class="form-control" name="SatisFiyati" value="@Model.SatisFiyati" />
+                            </div>
+                        </div>
+                        <div class="form-group has-success">
+                            <label class="col-lg-2 control-label">Olayın Tipi :</label>
+                            <div class="col-lg-10">
+                                <select class="form-control m-bot15" name="KategoriID">
+                                    @foreach (var kategori in ViewBag.Kategoriler)
+                                    {
+                                        <option value="@kategori.Id" @(kategori.Id == Model.KategoriID ? "selected" : "")>
+                                            @kategori.Adi
+                                        </option>
+                                    }
+                                </select>
+                            </div>
+                        </div>
+                        <div class="form-group has-success">
+                            <label class="col-lg-2 control-label">Olayın Açıklaması</label>
+                            <div class="col-lg-10">
+                                <input type="text" class="form-control" name="Aciklama" value="@Model.Aciklama" />
+                            </div>
+                        </div>
+                        <div class="form-group" style="padding-top:50px;padding-left:10px;">
+                            <div class="col-lg-offset-2 col-lg-10">
+                                <button class="btn btn-danger" type="submit">Güncelle</button>
+                                <a class="btn btn-default" href="/Admin/Olaylar">Geri dön</a>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+            </section>
+        </div>
+    </div>
+</div>
